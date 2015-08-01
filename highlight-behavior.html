@@ -1,5 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
-<styles>
+<style>
   @keyframes up {
     from {background-color: green;}
     to {background-color: none;}
@@ -38,13 +38,15 @@
   .value-down{
     color:red;
   }
-</styles>
+</style>
 <script>
     HighlightBehavior = {
       properties: {
         value: {
-          value:'0',
-          observer: '_highlightChanged'
+          value:0,
+          observer: '_highlightChanged',
+          notify:true,
+          reflectToAttribute:true
         },
       },
       created: function() {
