@@ -1,0 +1,67 @@
+<link rel="import" href="../polymer/polymer.html">
+<styles>
+  @keyframes up {
+    from {background-color: green;}
+    to {background-color: none;}
+  }
+
+  @keyframes down {
+    from {background-color: red;}
+    to {background-color: none;}
+  }
+
+  @keyframes unchanged {
+    from {background-color: gray;}
+    to {background-color: none;}
+  }
+
+  /* The element to apply the animation to */
+  .price-up {
+    animation-name: up;
+    animation-duration: .15s
+  }
+
+  .price-unchanged{
+    animation-name: unchanged;
+    animation-duration: .15s
+  }
+
+  .price-down{
+    animation-name: down;
+    animation-duration: .15s
+  }
+
+  .value-up{
+    color:green;
+  }
+
+  .value-down{
+    color:red;
+  }
+</styles>
+<script>
+    HighlightBehavior = {
+      properties: {
+        value: {
+          value:'0',
+          observer: '_highlightChanged'
+        },
+      },
+      created: function() {
+        console.log('Price Highlighting for ', this, 'enabled!');
+      },
+      _highlightChanged: function(newValue, oldValue) {
+        var classToApply = 'price-down'
+        if(newValue > oldValue){
+          classToApply = 'price-up';
+        }
+        this.classList.add(classToApply);
+        this.async(function() {
+          this.classList.remove(classToApply);
+        }, 300);
+      },
+    };
+</script>
+
+
+

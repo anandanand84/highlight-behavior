@@ -1,0 +1,29 @@
+{
+  "name": "highlight-behaviour",
+  "version": "0.0.0",
+  "authors": [
+    "anand.anand84@gmail.com"
+  ],
+  "description": "Highlight the price change in market watch",
+  "main": "highlight-behaviour.html",
+  "keywords": [
+    "NSE",
+    "Realtime",
+    "Scrip",
+    "Market",
+    "Watch"
+  ],
+  "license": "MIT",
+  "homepage": "traderslab.in",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies":{
+    "polymer": "Polymer/polymer#~1.0.7"
+  }
+}
